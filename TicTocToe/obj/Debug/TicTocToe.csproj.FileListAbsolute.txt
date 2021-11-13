@@ -1,0 +1,11 @@
+C:\Users\Jv Cataquiz\source\repos\Assignment3\TicTocToe\bin\Debug\TicTocToe.exe.config
+C:\Users\Jv Cataquiz\source\repos\Assignment3\TicTocToe\bin\Debug\TicTocToe.exe
+C:\Users\Jv Cataquiz\source\repos\Assignment3\TicTocToe\bin\Debug\TicTocToe.pdb
+C:\Users\Jv Cataquiz\source\repos\Assignment3\TicTocToe\obj\Debug\TicTocToe.csproj.AssemblyReference.cache
+C:\Users\Jv Cataquiz\source\repos\Assignment3\TicTocToe\obj\Debug\TicTocToe.Form1.resources
+C:\Users\Jv Cataquiz\source\repos\Assignment3\TicTocToe\obj\Debug\TicTocToe.Properties.Resources.resources
+C:\Users\Jv Cataquiz\source\repos\Assignment3\TicTocToe\obj\Debug\TicTocToe.csproj.GenerateResource.cache
+C:\Users\Jv Cataquiz\source\repos\Assignment3\TicTocToe\obj\Debug\TicTocToe.csproj.CoreCompileInputs.cache
+C:\Users\Jv Cataquiz\source\repos\Assignment3\TicTocToe\obj\Debug\TicTocToe.exe
+C:\Users\Jv Cataquiz\source\repos\Assignment3\TicTocToe\obj\Debug\TicTocToe.pdb
+C:\Users\Jv Cataquiz\source\repos\Assignment3\TicTocToe\obj\Debug\TicTocToe.Form2.resources
