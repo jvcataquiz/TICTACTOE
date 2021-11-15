@@ -13,6 +13,9 @@ namespace TicTocToe
     public partial class Form2 : Form
     {
         string versus;
+        public static string setValueText1 ="";
+        public static string setValueText2 = "";
+  
         public Form2()
         {
             InitializeComponent();
@@ -48,20 +51,23 @@ namespace TicTocToe
 
         private void textBoxDisplayCom_TextChanged(object sender, EventArgs e)
         {
-            textBoxDisplayCom.Text += textBoxDisplayCom.Text;
+            textBoxDisplayCom.Text = textBoxDisplayCom.Text;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (versus == "player2")
             {
-               
+               setValueText1 =Convert.ToString(textBoxDisplayP1.Text);
+                setValueText2 = Convert.ToString(textBoxDisplayP2.Text);
                 this.Hide();
                 Form1 form1 = new Form1();
                 form1.Show();
             }
             else
             {
+                setValueText1 = Convert.ToString(textBoxDisplayP1.Text);
+                setValueText2 = Convert.ToString(textBoxDisplayCom.Text);
                 this.Hide();
                 Form1 form1 = new Form1();
                 form1.Show();

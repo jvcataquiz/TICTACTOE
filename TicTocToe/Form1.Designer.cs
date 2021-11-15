@@ -55,6 +55,7 @@ namespace TicTocToe
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(105, 105);
             this.btn1.TabIndex = 0;
+            this.btn1.TabStop = false;
             this.btn1.UseVisualStyleBackColor = false;
             this.btn1.Click += new System.EventHandler(this.btn1_Click);
             this.btn1.MouseLeave += new System.EventHandler(this.btn1_MouseLeave);
@@ -68,6 +69,7 @@ namespace TicTocToe
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(105, 105);
             this.btn2.TabIndex = 1;
+            this.btn2.TabStop = false;
             this.btn2.UseVisualStyleBackColor = false;
             this.btn2.Click += new System.EventHandler(this.btn2_Click);
             this.btn2.MouseLeave += new System.EventHandler(this.btn2_MouseLeave);
@@ -81,6 +83,7 @@ namespace TicTocToe
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(105, 105);
             this.btn3.TabIndex = 2;
+            this.btn3.TabStop = false;
             this.btn3.UseVisualStyleBackColor = false;
             this.btn3.Click += new System.EventHandler(this.btn3_Click);
             this.btn3.MouseLeave += new System.EventHandler(this.btn3_MouseLeave);
@@ -94,6 +97,7 @@ namespace TicTocToe
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(105, 105);
             this.btn4.TabIndex = 3;
+            this.btn4.TabStop = false;
             this.btn4.UseVisualStyleBackColor = false;
             this.btn4.Click += new System.EventHandler(this.btn4_Click);
             this.btn4.MouseLeave += new System.EventHandler(this.btn4_MouseLeave);
@@ -107,6 +111,7 @@ namespace TicTocToe
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(105, 105);
             this.btn5.TabIndex = 4;
+            this.btn5.TabStop = false;
             this.btn5.UseVisualStyleBackColor = false;
             this.btn5.Click += new System.EventHandler(this.btn5_Click);
             this.btn5.MouseLeave += new System.EventHandler(this.btn5_MouseLeave);
@@ -120,6 +125,7 @@ namespace TicTocToe
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(105, 105);
             this.btn6.TabIndex = 5;
+            this.btn6.TabStop = false;
             this.btn6.UseVisualStyleBackColor = false;
             this.btn6.Click += new System.EventHandler(this.btn6_Click);
             this.btn6.MouseLeave += new System.EventHandler(this.btn6_MouseLeave);
@@ -133,6 +139,7 @@ namespace TicTocToe
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(105, 105);
             this.btn7.TabIndex = 6;
+            this.btn7.TabStop = false;
             this.btn7.UseVisualStyleBackColor = false;
             this.btn7.Click += new System.EventHandler(this.btn7_Click);
             this.btn7.MouseLeave += new System.EventHandler(this.btn7_MouseLeave);
@@ -146,6 +153,7 @@ namespace TicTocToe
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(105, 105);
             this.btn8.TabIndex = 7;
+            this.btn8.TabStop = false;
             this.btn8.UseVisualStyleBackColor = false;
             this.btn8.Click += new System.EventHandler(this.btn8_Click);
             this.btn8.MouseLeave += new System.EventHandler(this.btn8_MouseLeave);
@@ -159,6 +167,7 @@ namespace TicTocToe
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(105, 105);
             this.btn9.TabIndex = 8;
+            this.btn9.TabStop = false;
             this.btn9.UseVisualStyleBackColor = false;
             this.btn9.Click += new System.EventHandler(this.btn9_Click);
             this.btn9.MouseLeave += new System.EventHandler(this.btn9_MouseLeave);
@@ -172,6 +181,7 @@ namespace TicTocToe
             this.btnNewgame.Name = "btnNewgame";
             this.btnNewgame.Size = new System.Drawing.Size(105, 40);
             this.btnNewgame.TabIndex = 9;
+            this.btnNewgame.TabStop = false;
             this.btnNewgame.Text = "New Game";
             this.btnNewgame.UseVisualStyleBackColor = false;
             this.btnNewgame.Click += new System.EventHandler(this.btnNewgame_Click);
@@ -179,9 +189,10 @@ namespace TicTocToe
             // player1Prof
             // 
             this.player1Prof.AutoSize = true;
-            this.player1Prof.Location = new System.Drawing.Point(26, 31);
+            this.player1Prof.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1Prof.Location = new System.Drawing.Point(12, 44);
             this.player1Prof.Name = "player1Prof";
-            this.player1Prof.Size = new System.Drawing.Size(54, 13);
+            this.player1Prof.Size = new System.Drawing.Size(90, 19);
             this.player1Prof.TabIndex = 10;
             this.player1Prof.Text = "nameofp1";
             this.player1Prof.Click += new System.EventHandler(this.player1Prof_Click);
@@ -189,9 +200,10 @@ namespace TicTocToe
             // p2OrCom
             // 
             this.p2OrCom.AutoSize = true;
-            this.p2OrCom.Location = new System.Drawing.Point(438, 31);
+            this.p2OrCom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.p2OrCom.Location = new System.Drawing.Point(409, 44);
             this.p2OrCom.Name = "p2OrCom";
-            this.p2OrCom.Size = new System.Drawing.Size(83, 13);
+            this.p2OrCom.Size = new System.Drawing.Size(140, 19);
             this.p2OrCom.TabIndex = 11;
             this.p2OrCom.Text = "nameofp2orcom";
             this.p2OrCom.Click += new System.EventHandler(this.p2OrCom_Click);

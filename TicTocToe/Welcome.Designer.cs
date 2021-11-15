@@ -74,7 +74,6 @@ namespace TicTocToe
             this.rbtnPlayer2.Name = "rbtnPlayer2";
             this.rbtnPlayer2.Size = new System.Drawing.Size(94, 17);
             this.rbtnPlayer2.TabIndex = 3;
-            this.rbtnPlayer2.TabStop = true;
             this.rbtnPlayer2.Text = "Player2 Name:";
             this.rbtnPlayer2.UseVisualStyleBackColor = true;
             this.rbtnPlayer2.CheckedChanged += new System.EventHandler(this.rbtnPlayer2_CheckedChanged);
@@ -86,13 +85,13 @@ namespace TicTocToe
             this.rdbtnCom.Name = "rdbtnCom";
             this.rdbtnCom.Size = new System.Drawing.Size(104, 17);
             this.rdbtnCom.TabIndex = 4;
-            this.rdbtnCom.TabStop = true;
             this.rdbtnCom.Text = "Computer Name:";
             this.rdbtnCom.UseVisualStyleBackColor = true;
             this.rdbtnCom.CheckedChanged += new System.EventHandler(this.rdbtnCom_CheckedChanged);
             // 
             // textBoxDisplayP2
             // 
+            this.textBoxDisplayP2.Enabled = false;
             this.textBoxDisplayP2.Location = new System.Drawing.Point(174, 207);
             this.textBoxDisplayP2.Name = "textBoxDisplayP2";
             this.textBoxDisplayP2.Size = new System.Drawing.Size(254, 20);
@@ -102,6 +101,7 @@ namespace TicTocToe
             // 
             // textBoxDisplayCom
             // 
+            this.textBoxDisplayCom.Enabled = false;
             this.textBoxDisplayCom.Location = new System.Drawing.Point(174, 241);
             this.textBoxDisplayCom.Name = "textBoxDisplayCom";
             this.textBoxDisplayCom.Size = new System.Drawing.Size(254, 20);

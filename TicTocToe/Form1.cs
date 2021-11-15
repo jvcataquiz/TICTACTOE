@@ -16,6 +16,8 @@ namespace TicTocToe
         public Form1()
         {
             InitializeComponent();
+            player1Prof.Text = Form2.setValueText1;
+            p2OrCom.Text = Form2.setValueText2;
         }
 
         string operation;
@@ -186,15 +188,13 @@ namespace TicTocToe
         }
 
 
-        public void names(string playerP1,string p2OrComs)
-        {
-            playerP1 = player1Prof.Text;
-            p2OrComs = p2OrCom.Text;
-        }
+        
 
         private void p2OrCom_Click(object sender, EventArgs e)
         {
            
         }
+
+       
     }
 }
