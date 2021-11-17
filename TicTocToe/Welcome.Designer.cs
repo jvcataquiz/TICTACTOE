@@ -35,7 +35,6 @@ namespace TicTocToe
             this.rbtnPlayer2 = new System.Windows.Forms.RadioButton();
             this.rdbtnCom = new System.Windows.Forms.RadioButton();
             this.textBoxDisplayP2 = new System.Windows.Forms.TextBox();
-            this.textBoxDisplayCom = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -64,7 +63,7 @@ namespace TicTocToe
             this.textBoxDisplayP1.Name = "textBoxDisplayP1";
             this.textBoxDisplayP1.Size = new System.Drawing.Size(254, 20);
             this.textBoxDisplayP1.TabIndex = 2;
-            this.textBoxDisplayP1.Text = " \"Enter your Name\"";
+            this.textBoxDisplayP1.Text = " \"Enter Player1 Name:\"";
             this.textBoxDisplayP1.TextChanged += new System.EventHandler(this.textBoxDisplayP1_TextChanged);
             // 
             // rbtnPlayer2
@@ -83,9 +82,9 @@ namespace TicTocToe
             this.rdbtnCom.AutoSize = true;
             this.rdbtnCom.Location = new System.Drawing.Point(68, 242);
             this.rdbtnCom.Name = "rdbtnCom";
-            this.rdbtnCom.Size = new System.Drawing.Size(104, 17);
+            this.rdbtnCom.Size = new System.Drawing.Size(73, 17);
             this.rdbtnCom.TabIndex = 4;
-            this.rdbtnCom.Text = "Computer Name:";
+            this.rdbtnCom.Text = "Computer:";
             this.rdbtnCom.UseVisualStyleBackColor = true;
             this.rdbtnCom.CheckedChanged += new System.EventHandler(this.rdbtnCom_CheckedChanged);
             // 
@@ -96,18 +95,8 @@ namespace TicTocToe
             this.textBoxDisplayP2.Name = "textBoxDisplayP2";
             this.textBoxDisplayP2.Size = new System.Drawing.Size(254, 20);
             this.textBoxDisplayP2.TabIndex = 5;
-            this.textBoxDisplayP2.Text = " \"Enter your Name\"";
+            this.textBoxDisplayP2.Text = " \"Enter Player2 Name:\"";
             this.textBoxDisplayP2.TextChanged += new System.EventHandler(this.textBoxDisplayP2_TextChanged);
-            // 
-            // textBoxDisplayCom
-            // 
-            this.textBoxDisplayCom.Enabled = false;
-            this.textBoxDisplayCom.Location = new System.Drawing.Point(174, 241);
-            this.textBoxDisplayCom.Name = "textBoxDisplayCom";
-            this.textBoxDisplayCom.Size = new System.Drawing.Size(254, 20);
-            this.textBoxDisplayCom.TabIndex = 6;
-            this.textBoxDisplayCom.Text = " \"Enter your Name\"";
-            this.textBoxDisplayCom.TextChanged += new System.EventHandler(this.textBoxDisplayCom_TextChanged);
             // 
             // btnSubmit
             // 
@@ -125,7 +114,6 @@ namespace TicTocToe
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 450);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.textBoxDisplayCom);
             this.Controls.Add(this.textBoxDisplayP2);
             this.Controls.Add(this.rdbtnCom);
             this.Controls.Add(this.rbtnPlayer2);
@@ -148,7 +136,6 @@ namespace TicTocToe
         private System.Windows.Forms.RadioButton rbtnPlayer2;
         private System.Windows.Forms.RadioButton rdbtnCom;
         private System.Windows.Forms.TextBox textBoxDisplayP2;
-        private System.Windows.Forms.TextBox textBoxDisplayCom;
         private System.Windows.Forms.Button btnSubmit;
     }
 }

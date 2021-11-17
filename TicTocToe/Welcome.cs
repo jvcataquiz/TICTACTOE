@@ -28,7 +28,7 @@ namespace TicTocToe
 
         private void rbtnPlayer2_CheckedChanged(object sender, EventArgs e)
         {
-            textBoxDisplayCom.Enabled = false;
+            
             textBoxDisplayP2.Enabled = true;
             versus = "player2";
         }
@@ -36,8 +36,8 @@ namespace TicTocToe
         private void rdbtnCom_CheckedChanged(object sender, EventArgs e)
         {
             textBoxDisplayP2.Enabled = false;
-            textBoxDisplayCom.Enabled = true;
-            versus = "com";
+            textBoxDisplayP2.Text = "Computer";
+              versus = "com";
         }
         private void textBoxDisplayP1_TextChanged(object sender, EventArgs e)
         {
@@ -49,25 +49,25 @@ namespace TicTocToe
             textBoxDisplayP2.Text = textBoxDisplayP2.Text;
         }
 
-        private void textBoxDisplayCom_TextChanged(object sender, EventArgs e)
-        {
-            textBoxDisplayCom.Text = textBoxDisplayCom.Text;
-        }
+       
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (versus == "player2")
             {
-               setValueText1 =Convert.ToString(textBoxDisplayP1.Text);
+                setValueText1 =Convert.ToString(textBoxDisplayP1.Text);
                 setValueText2 = Convert.ToString(textBoxDisplayP2.Text);
+                
                 this.Hide();
                 Form1 form1 = new Form1();
+               
                 form1.Show();
             }
             else
             {
                 setValueText1 = Convert.ToString(textBoxDisplayP1.Text);
-                setValueText2 = Convert.ToString(textBoxDisplayCom.Text);
+                setValueText2 = Convert.ToString(textBoxDisplayP2.Text);
+                versus = "com";
                 this.Hide();
                 Form1 form1 = new Form1();
                 form1.Show();

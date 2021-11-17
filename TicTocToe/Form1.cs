@@ -12,12 +12,16 @@ namespace TicTocToe
 {
     public partial class Form1 : Form
     {
-  
+      bool playerGame ;
+
+       
+
         public Form1()
         {
             InitializeComponent();
             player1Prof.Text = Form2.setValueText1;
             p2OrCom.Text = Form2.setValueText2;
+           
         }
 
         string operation;
