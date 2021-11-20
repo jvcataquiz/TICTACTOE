@@ -39,7 +39,22 @@ namespace TicTocToe
 
 
         }
+        private void players()
+        {
+            Random rnd1 = new Random();
+            int randNum = rnd1.Next(1, 10);
+            if (randNum % 2 == 0)
+            {
+                LabelPlayerone.Text = "X";
+                labelPlayerTwo.Text = "O";
 
+            }
+            else
+            {
+                LabelPlayerone.Text = "O";
+                labelPlayerTwo.Text = "X";
+            }
+        }
         private void btnNewgame_Click(object sender, EventArgs e)
         {
 
@@ -153,22 +168,7 @@ namespace TicTocToe
                 leave.ForeColor = System.Drawing.Color.Black;
             }
         }
-        private void players()
-        {
-            Random rnd1 = new Random();
-            int randNum = rnd1.Next(1, 10);
-            if (randNum % 2 == 0)
-            {
-                LabelPlayerone.Text =  "X";
-                labelPlayerTwo.Text = "O";
-
-            }
-            else
-            {
-                LabelPlayerone.Text = "O";
-                labelPlayerTwo.Text = "X";
-            }
-        }
+       
         private void winnerChecker()
         {
 
