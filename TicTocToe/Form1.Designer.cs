@@ -29,8 +29,7 @@ namespace TicTocToe
         /// </summary>
         private void InitializeComponent()
         {
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btn1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
@@ -43,6 +42,12 @@ namespace TicTocToe
             this.btnNewgame = new System.Windows.Forms.Button();
             this.player1Prof = new System.Windows.Forms.Label();
             this.p2OrCom = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LabelPlayerone = new System.Windows.Forms.Label();
+            this.labelPlayerTwo = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn1
@@ -51,133 +56,150 @@ namespace TicTocToe
             this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
             this.btn1.ForeColor = System.Drawing.Color.Black;
-            this.btn1.Location = new System.Drawing.Point(107, 100);
+            this.btn1.Location = new System.Drawing.Point(133, 106);
             this.btn1.Name = "btn1";
+            this.btn1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn1.Size = new System.Drawing.Size(105, 105);
             this.btn1.TabIndex = 0;
             this.btn1.TabStop = false;
             this.btn1.UseVisualStyleBackColor = false;
-            this.btn1.Click += new System.EventHandler(this.btn1_Click);
-            this.btn1.MouseLeave += new System.EventHandler(this.btn1_MouseLeave);
-            this.btn1.MouseHover += new System.EventHandler(this.btn1_MouseHover);
+            this.btn1.Click += new System.EventHandler(this.btn1to9);
+            this.btn1.MouseLeave += new System.EventHandler(this.leave1to9);
+            this.btn1.MouseHover += new System.EventHandler(this.hover1to9);
             // 
             // btn2
             // 
             this.btn2.BackColor = System.Drawing.Color.Black;
             this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn2.Location = new System.Drawing.Point(218, 100);
+            this.btn2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
+            this.btn2.Location = new System.Drawing.Point(244, 106);
             this.btn2.Name = "btn2";
+            this.btn2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn2.Size = new System.Drawing.Size(105, 105);
             this.btn2.TabIndex = 1;
             this.btn2.TabStop = false;
             this.btn2.UseVisualStyleBackColor = false;
-            this.btn2.Click += new System.EventHandler(this.btn2_Click);
-            this.btn2.MouseLeave += new System.EventHandler(this.btn2_MouseLeave);
-            this.btn2.MouseHover += new System.EventHandler(this.btn2_MouseHover);
+            this.btn2.Click += new System.EventHandler(this.btn1to9);
+            this.btn2.MouseLeave += new System.EventHandler(this.leave1to9);
+            this.btn2.MouseHover += new System.EventHandler(this.hover1to9);
             // 
             // btn3
             // 
             this.btn3.BackColor = System.Drawing.Color.Black;
             this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn3.Location = new System.Drawing.Point(329, 100);
+            this.btn3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
+            this.btn3.Location = new System.Drawing.Point(355, 106);
             this.btn3.Name = "btn3";
+            this.btn3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn3.Size = new System.Drawing.Size(105, 105);
             this.btn3.TabIndex = 2;
             this.btn3.TabStop = false;
             this.btn3.UseVisualStyleBackColor = false;
-            this.btn3.Click += new System.EventHandler(this.btn3_Click);
-            this.btn3.MouseLeave += new System.EventHandler(this.btn3_MouseLeave);
-            this.btn3.MouseHover += new System.EventHandler(this.btn3_MouseHover);
+            this.btn3.Click += new System.EventHandler(this.btn1to9);
+            this.btn3.MouseLeave += new System.EventHandler(this.leave1to9);
+            this.btn3.MouseHover += new System.EventHandler(this.hover1to9);
             // 
             // btn4
             // 
             this.btn4.BackColor = System.Drawing.Color.Black;
             this.btn4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn4.Location = new System.Drawing.Point(107, 211);
+            this.btn4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
+            this.btn4.Location = new System.Drawing.Point(133, 217);
             this.btn4.Name = "btn4";
+            this.btn4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn4.Size = new System.Drawing.Size(105, 105);
             this.btn4.TabIndex = 3;
             this.btn4.TabStop = false;
             this.btn4.UseVisualStyleBackColor = false;
-            this.btn4.Click += new System.EventHandler(this.btn4_Click);
-            this.btn4.MouseLeave += new System.EventHandler(this.btn4_MouseLeave);
-            this.btn4.MouseHover += new System.EventHandler(this.btn4_MouseHover);
+            this.btn4.Click += new System.EventHandler(this.btn1to9);
+            this.btn4.MouseLeave += new System.EventHandler(this.leave1to9);
+            this.btn4.MouseHover += new System.EventHandler(this.hover1to9);
             // 
             // btn5
             // 
             this.btn5.BackColor = System.Drawing.Color.Black;
             this.btn5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn5.Location = new System.Drawing.Point(218, 211);
+            this.btn5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
+            this.btn5.Location = new System.Drawing.Point(244, 217);
             this.btn5.Name = "btn5";
+            this.btn5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn5.Size = new System.Drawing.Size(105, 105);
             this.btn5.TabIndex = 4;
             this.btn5.TabStop = false;
             this.btn5.UseVisualStyleBackColor = false;
-            this.btn5.Click += new System.EventHandler(this.btn5_Click);
-            this.btn5.MouseLeave += new System.EventHandler(this.btn5_MouseLeave);
-            this.btn5.MouseHover += new System.EventHandler(this.btn5_MouseHover);
+            this.btn5.Click += new System.EventHandler(this.btn1to9);
+            this.btn5.MouseLeave += new System.EventHandler(this.leave1to9);
+            this.btn5.MouseHover += new System.EventHandler(this.hover1to9);
             // 
             // btn6
             // 
             this.btn6.BackColor = System.Drawing.Color.Black;
             this.btn6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn6.Location = new System.Drawing.Point(329, 211);
+            this.btn6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
+            this.btn6.Location = new System.Drawing.Point(355, 217);
             this.btn6.Name = "btn6";
+            this.btn6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn6.Size = new System.Drawing.Size(105, 105);
             this.btn6.TabIndex = 5;
             this.btn6.TabStop = false;
             this.btn6.UseVisualStyleBackColor = false;
-            this.btn6.Click += new System.EventHandler(this.btn6_Click);
-            this.btn6.MouseLeave += new System.EventHandler(this.btn6_MouseLeave);
-            this.btn6.MouseHover += new System.EventHandler(this.btn6_MouseHover);
+            this.btn6.Click += new System.EventHandler(this.btn1to9);
+            this.btn6.MouseLeave += new System.EventHandler(this.leave1to9);
+            this.btn6.MouseHover += new System.EventHandler(this.hover1to9);
             // 
             // btn7
             // 
             this.btn7.BackColor = System.Drawing.Color.Black;
             this.btn7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn7.Location = new System.Drawing.Point(107, 322);
+            this.btn7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
+            this.btn7.Location = new System.Drawing.Point(133, 328);
             this.btn7.Name = "btn7";
+            this.btn7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn7.Size = new System.Drawing.Size(105, 105);
             this.btn7.TabIndex = 6;
             this.btn7.TabStop = false;
             this.btn7.UseVisualStyleBackColor = false;
-            this.btn7.Click += new System.EventHandler(this.btn7_Click);
-            this.btn7.MouseLeave += new System.EventHandler(this.btn7_MouseLeave);
-            this.btn7.MouseHover += new System.EventHandler(this.btn7_MouseHover);
+            this.btn7.Click += new System.EventHandler(this.btn1to9);
+            this.btn7.MouseLeave += new System.EventHandler(this.leave1to9);
+            this.btn7.MouseHover += new System.EventHandler(this.hover1to9);
             // 
             // btn8
             // 
             this.btn8.BackColor = System.Drawing.Color.Black;
             this.btn8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn8.Location = new System.Drawing.Point(218, 322);
+            this.btn8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
+            this.btn8.Location = new System.Drawing.Point(244, 328);
             this.btn8.Name = "btn8";
+            this.btn8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn8.Size = new System.Drawing.Size(105, 105);
             this.btn8.TabIndex = 7;
             this.btn8.TabStop = false;
             this.btn8.UseVisualStyleBackColor = false;
-            this.btn8.Click += new System.EventHandler(this.btn8_Click);
-            this.btn8.MouseLeave += new System.EventHandler(this.btn8_MouseLeave);
-            this.btn8.MouseHover += new System.EventHandler(this.btn8_MouseHover);
+            this.btn8.Click += new System.EventHandler(this.btn1to9);
+            this.btn8.MouseLeave += new System.EventHandler(this.leave1to9);
+            this.btn8.MouseHover += new System.EventHandler(this.hover1to9);
             // 
             // btn9
             // 
             this.btn9.BackColor = System.Drawing.Color.Black;
             this.btn9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn9.Location = new System.Drawing.Point(329, 323);
+            this.btn9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
+            this.btn9.Location = new System.Drawing.Point(355, 329);
             this.btn9.Name = "btn9";
+            this.btn9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn9.Size = new System.Drawing.Size(105, 105);
             this.btn9.TabIndex = 8;
             this.btn9.TabStop = false;
             this.btn9.UseVisualStyleBackColor = false;
-            this.btn9.Click += new System.EventHandler(this.btn9_Click);
-            this.btn9.MouseLeave += new System.EventHandler(this.btn9_MouseLeave);
-            this.btn9.MouseHover += new System.EventHandler(this.btn9_MouseHover);
+            this.btn9.Click += new System.EventHandler(this.btn1to9);
+            this.btn9.MouseLeave += new System.EventHandler(this.leave1to9);
+            this.btn9.MouseHover += new System.EventHandler(this.hover1to9);
             // 
             // btnNewgame
             // 
             this.btnNewgame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(125)))), ((int)(((byte)(62)))), ((int)(((byte)(255)))));
             this.btnNewgame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.btnNewgame.Location = new System.Drawing.Point(329, 444);
+            this.btnNewgame.Location = new System.Drawing.Point(355, 450);
             this.btnNewgame.Name = "btnNewgame";
             this.btnNewgame.Size = new System.Drawing.Size(105, 40);
             this.btnNewgame.TabIndex = 9;
@@ -189,8 +211,10 @@ namespace TicTocToe
             // player1Prof
             // 
             this.player1Prof.AutoSize = true;
+            this.player1Prof.BackColor = System.Drawing.Color.White;
             this.player1Prof.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player1Prof.Location = new System.Drawing.Point(12, 44);
+            this.player1Prof.ForeColor = System.Drawing.Color.OrangeRed;
+            this.player1Prof.Location = new System.Drawing.Point(43, 50);
             this.player1Prof.Name = "player1Prof";
             this.player1Prof.Size = new System.Drawing.Size(90, 19);
             this.player1Prof.TabIndex = 10;
@@ -200,43 +224,107 @@ namespace TicTocToe
             // p2OrCom
             // 
             this.p2OrCom.AutoSize = true;
+            this.p2OrCom.BackColor = System.Drawing.Color.White;
             this.p2OrCom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.p2OrCom.Location = new System.Drawing.Point(409, 44);
+            this.p2OrCom.ForeColor = System.Drawing.Color.OrangeRed;
+            this.p2OrCom.Location = new System.Drawing.Point(478, 50);
             this.p2OrCom.Name = "p2OrCom";
-            this.p2OrCom.Size = new System.Drawing.Size(140, 19);
+            this.p2OrCom.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.p2OrCom.Size = new System.Drawing.Size(70, 19);
             this.p2OrCom.TabIndex = 11;
-            this.p2OrCom.Text = "nameofp2orcom";
+            this.p2OrCom.Text = "nameof";
+            this.p2OrCom.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.p2OrCom.Click += new System.EventHandler(this.p2OrCom_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Poor Richard", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Location = new System.Drawing.Point(226, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 28);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "TICTACTOE";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.player1Prof);
+            this.panel1.Controls.Add(this.p2OrCom);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.LabelPlayerone);
+            this.panel1.Controls.Add(this.btnNewgame);
+            this.panel1.Controls.Add(this.labelPlayerTwo);
+            this.panel1.Controls.Add(this.btn9);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btn8);
+            this.panel1.Controls.Add(this.btn3);
+            this.panel1.Controls.Add(this.btn7);
+            this.panel1.Controls.Add(this.btn1);
+            this.panel1.Controls.Add(this.btn6);
+            this.panel1.Controls.Add(this.btn2);
+            this.panel1.Controls.Add(this.btn5);
+            this.panel1.Controls.Add(this.btn4);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(604, 502);
+            this.panel1.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(235, 50);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.label2.Size = new System.Drawing.Size(130, 44);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Mechanics:\r\n    \"X\" - First To Play";
+            // 
+            // LabelPlayerone
+            // 
+            this.LabelPlayerone.AutoSize = true;
+            this.LabelPlayerone.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18.25F);
+            this.LabelPlayerone.Location = new System.Drawing.Point(55, 80);
+            this.LabelPlayerone.Name = "LabelPlayerone";
+            this.LabelPlayerone.Size = new System.Drawing.Size(45, 29);
+            this.LabelPlayerone.TabIndex = 14;
+            this.LabelPlayerone.Text = "P1";
+            // 
+            // labelPlayerTwo
+            // 
+            this.labelPlayerTwo.AutoSize = true;
+            this.labelPlayerTwo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18.25F);
+            this.labelPlayerTwo.Location = new System.Drawing.Point(486, 77);
+            this.labelPlayerTwo.Name = "labelPlayerTwo";
+            this.labelPlayerTwo.Size = new System.Drawing.Size(45, 29);
+            this.labelPlayerTwo.TabIndex = 13;
+            this.labelPlayerTwo.Text = "P2";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(549, 494);
-            this.Controls.Add(this.p2OrCom);
-            this.Controls.Add(this.player1Prof);
-            this.Controls.Add(this.btnNewgame);
-            this.Controls.Add(this.btn9);
-            this.Controls.Add(this.btn8);
-            this.Controls.Add(this.btn7);
-            this.Controls.Add(this.btn6);
-            this.Controls.Add(this.btn5);
-            this.Controls.Add(this.btn4);
-            this.Controls.Add(this.btn3);
-            this.Controls.Add(this.btn2);
-            this.Controls.Add(this.btn1);
+            this.ClientSize = new System.Drawing.Size(604, 502);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn3;
@@ -249,6 +337,11 @@ namespace TicTocToe
         private System.Windows.Forms.Button btnNewgame;
         private System.Windows.Forms.Label player1Prof;
         private System.Windows.Forms.Label p2OrCom;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label LabelPlayerone;
+        private System.Windows.Forms.Label labelPlayerTwo;
+        private System.Windows.Forms.Label label2;
     }
 }
 

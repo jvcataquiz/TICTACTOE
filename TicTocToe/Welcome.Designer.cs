@@ -29,6 +29,7 @@ namespace TicTocToe
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.labelWelcome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDisplayP1 = new System.Windows.Forms.TextBox();
@@ -36,12 +37,15 @@ namespace TicTocToe
             this.rdbtnCom = new System.Windows.Forms.RadioButton();
             this.textBoxDisplayP2 = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelWelcome
             // 
             this.labelWelcome.AutoSize = true;
-            this.labelWelcome.Location = new System.Drawing.Point(215, 74);
+            this.labelWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.labelWelcome.Location = new System.Drawing.Point(217, 23);
             this.labelWelcome.Name = "labelWelcome";
             this.labelWelcome.Size = new System.Drawing.Size(52, 13);
             this.labelWelcome.TabIndex = 0;
@@ -63,6 +67,7 @@ namespace TicTocToe
             this.textBoxDisplayP1.Name = "textBoxDisplayP1";
             this.textBoxDisplayP1.Size = new System.Drawing.Size(254, 20);
             this.textBoxDisplayP1.TabIndex = 2;
+            this.textBoxDisplayP1.TabStop = false;
             this.textBoxDisplayP1.Text = " \"Enter Player1 Name:\"";
             this.textBoxDisplayP1.TextChanged += new System.EventHandler(this.textBoxDisplayP1_TextChanged);
             // 
@@ -95,6 +100,7 @@ namespace TicTocToe
             this.textBoxDisplayP2.Name = "textBoxDisplayP2";
             this.textBoxDisplayP2.Size = new System.Drawing.Size(254, 20);
             this.textBoxDisplayP2.TabIndex = 5;
+            this.textBoxDisplayP2.TabStop = false;
             this.textBoxDisplayP2.Text = " \"Enter Player2 Name:\"";
             this.textBoxDisplayP2.TextChanged += new System.EventHandler(this.textBoxDisplayP2_TextChanged);
             // 
@@ -104,15 +110,30 @@ namespace TicTocToe
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 7;
+            this.btnSubmit.TabStop = false;
             this.btnSubmit.Text = "SUBMIT";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(505, 384);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 450);
+            this.ClientSize = new System.Drawing.Size(505, 384);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.textBoxDisplayP2);
             this.Controls.Add(this.rdbtnCom);
@@ -120,9 +141,14 @@ namespace TicTocToe
             this.Controls.Add(this.textBoxDisplayP1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelWelcome);
+            this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "TICTACTOE";
             this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +163,6 @@ namespace TicTocToe
         private System.Windows.Forms.RadioButton rdbtnCom;
         private System.Windows.Forms.TextBox textBoxDisplayP2;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

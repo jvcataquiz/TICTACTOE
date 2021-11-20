@@ -13,162 +13,36 @@ namespace TicTocToe
     public partial class Form1 : Form
     {
       bool playerGame ;
-
        
-
+        bool player2;
+      
+        bool turn = true;
+        int countturn = 0;
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         public Form1()
         {
             InitializeComponent();
+            
             player1Prof.Text = Form2.setValueText1;
             p2OrCom.Text = Form2.setValueText2;
-           
-        }
+            player.SoundLocation = "ticbg.wav";
+            playerGame = Form2.playerController;
+                if (playerGame)
+            {
+                player2 = true;
+            }
+            else
+            {
+                player2 = false;
+            }
+            player.Play();
 
-        string operation;
-        ////when button is clicked
-     
 
-        private void btn2_Click(object sender, EventArgs e)
-        {
-            btn2.Enabled = false;
-            operation = "2";
         }
-
-        private void btn3_Click(object sender, EventArgs e)
-        {
-            btn3.Enabled = false;
-            operation = "3";
-        }
-
-        private void btn4_Click(object sender, EventArgs e)
-        {
-            btn4.Enabled = false;
-            operation = "4";
-        }
-        private void btn5_Click(object sender, EventArgs e)
-        {
-            btn5.Enabled = false;
-            operation = "5";
-        }
-
-        private void btn6_Click(object sender, EventArgs e)
-        {
-            btn6.Enabled = false;
-            operation = "6";
-        }
-
-        private void btn7_Click(object sender, EventArgs e)
-        {
-            btn7.Enabled = false;
-            operation = "7";
-        }
-
-        private void btn8_Click(object sender, EventArgs e)
-        {
-            btn8.Enabled = false;
-            operation = "8";
-        }
-
-        private void btn9_Click(object sender, EventArgs e)
-        {
-            btn9.Enabled = false;
-            operation = "9";
-        }
-        //when button is hovered
-        private void btn1_MouseHover(object sender, EventArgs e)
-        {
-            btn1.BackColor = System.Drawing.Color.Gray;
-        }
-
-       
-        private void btn2_MouseHover(object sender, EventArgs e)
-        {
-            btn2.BackColor = System.Drawing.Color.Gray;
-        }
-
-        private void btn3_MouseHover(object sender, EventArgs e)
-        {
-            btn3.BackColor = System.Drawing.Color.Gray;
-        }
-
-        private void btn4_MouseHover(object sender, EventArgs e)
-        {
-            btn4.BackColor = System.Drawing.Color.Gray;
-        }
-
-        private void btn5_MouseHover(object sender, EventArgs e)
-        {
-            btn5.BackColor = System.Drawing.Color.Gray;
-        }
-
-        private void btn6_MouseHover(object sender, EventArgs e)
-        {
-            btn6.BackColor = System.Drawing.Color.Gray;
-        }
-
-        private void btn7_MouseHover(object sender, EventArgs e)
-        {
-            btn7.BackColor = System.Drawing.Color.Gray;
-        }
-
-        private void btn8_MouseHover(object sender, EventArgs e)
-        {
-            btn8.BackColor = System.Drawing.Color.Gray;
-        }
-
-        private void btn9_MouseHover(object sender, EventArgs e)
-        {
-            btn9.BackColor = System.Drawing.Color.Gray;
-        }
-        //when cursor leave in the top of the button
-        private void btn1_MouseLeave(object sender, EventArgs e)
-        {
-            btn1.BackColor = System.Drawing.Color.Black;
-        }
-
-        private void btn2_MouseLeave(object sender, EventArgs e)
-        {
-            btn2.BackColor = System.Drawing.Color.Black;
-        }
-
-        private void btn3_MouseLeave(object sender, EventArgs e)
-        {
-            btn3.BackColor = System.Drawing.Color.Black;
-        }
-
-        private void btn4_MouseLeave(object sender, EventArgs e)
-        {
-            btn4.BackColor = System.Drawing.Color.Black;
-        }
-
-        private void btn5_MouseLeave(object sender, EventArgs e)
-        {
-            btn5.BackColor = System.Drawing.Color.Black;
-        }
-
-        private void btn6_MouseLeave(object sender, EventArgs e)
-        {
-            btn6.BackColor = System.Drawing.Color.Black;
-        }
-
-        private void btn7_MouseLeave(object sender, EventArgs e)
-        {
-            btn7.BackColor = System.Drawing.Color.Black;
-        }
-
-        private void btn8_MouseLeave(object sender, EventArgs e)
-        {
-            btn8.BackColor = System.Drawing.Color.Black;
-        }
-
-        private void btn9_MouseLeave(object sender, EventArgs e)
-        {
-            btn9.BackColor = System.Drawing.Color.Black;
-        }
-
 
         private void btnNewgame_Click(object sender, EventArgs e)
         {
+
             btn1.Enabled = true;
             btn2.Enabled = true;
             btn3.Enabled = true;
@@ -178,13 +52,33 @@ namespace TicTocToe
             btn7.Enabled = true;
             btn8.Enabled = true; 
             btn9.Enabled = true;
+            btn1.Text = "";
+            btn2.Text = "";
+            btn3.Text = "";
+            btn4.Text = "";
+            btn5.Text = "";
+            btn6.Text = "";
+            btn7.Text = "";
+            btn8.Text = "";
+            btn9.Text = "";
+
+
+            btn1.BackColor = System.Drawing.Color.Black;
+            btn2.BackColor = System.Drawing.Color.Black;
+            btn3.BackColor = System.Drawing.Color.Black;
+            btn4.BackColor = System.Drawing.Color.Black;
+            btn5.BackColor = System.Drawing.Color.Black;
+            btn6.BackColor = System.Drawing.Color.Black;
+            btn7.BackColor = System.Drawing.Color.Black;
+            btn8.BackColor = System.Drawing.Color.Black;
+            btn9.BackColor = System.Drawing.Color.Black;
+            turn = true;
+            countturn = 0;
+            players();
         }
 
-        private void btn1_Click(object sender, EventArgs e)
-        {
-            btn1.Enabled = false;
-            operation = "1";
-        }
+        
+
 
         private void player1Prof_Click(object sender, EventArgs e)
         {
@@ -198,7 +92,214 @@ namespace TicTocToe
         {
            
         }
-
        
+        private void btn1to9(object sender, EventArgs e)
+        {
+            
+            if (player2)
+            {
+                Button btnclick = (Button)sender;
+                if (turn)
+                {
+                    btnclick.Text = "X";
+                    countturn++;
+                }
+                else
+                {
+                    btnclick.Text = "O";
+                }
+                turn = !turn;
+                btnclick.Enabled = false;
+                winnerChecker();
+               
+            }
+            else
+            {
+                Button combtnclick = (Button)sender;
+                if (turn)
+                {
+                  
+                    combtnclick.Text = LabelPlayerone.Text;
+                    countturn++;
+                }
+                else
+                {
+                    combtnclick.Text = labelPlayerTwo.Text;
+                    
+                }
+                
+            }
+        }
+
+        private void hover1to9(object sender, EventArgs e)
+        {
+            Button hover = (Button)sender;
+            hover.BackColor = System.Drawing.Color.Gray;
+            hover.ForeColor = System.Drawing.Color.Gray;
+        }
+
+        private void leave1to9(object sender, EventArgs e)
+        {
+            Button leave = (Button)sender;
+            if (leave.Enabled)
+            {
+                leave.BackColor = System.Drawing.Color.Black;
+                leave.ForeColor = System.Drawing.Color.Black;
+
+            }
+            else
+            {
+                leave.BackColor = System.Drawing.Color.Gray;
+                leave.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+        private void players()
+        {
+            Random rnd1 = new Random();
+            int randNum = rnd1.Next(1, 10);
+            if (randNum % 2 == 0)
+            {
+                LabelPlayerone.Text =  "X";
+                labelPlayerTwo.Text = "O";
+
+            }
+            else
+            {
+                LabelPlayerone.Text = "O";
+                labelPlayerTwo.Text = "X";
+            }
+        }
+        private void winnerChecker()
+        {
+
+            //hori
+            if ((btn1.Text == btn2.Text) && (btn2.Text == btn3.Text)&&(!btn1.Enabled))
+            {
+               if(btn1.Text == LabelPlayerone.Text)
+                { 
+                    MessageBox.Show("Congrats:" + player1Prof.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Congrats:" + p2OrCom.Text);
+                }
+                btnNewgame.PerformClick();
+
+            }
+            else if ((btn4.Text == btn5.Text) && (btn5.Text == btn6.Text) && (!btn4.Enabled))
+            {
+                if (btn4.Text == LabelPlayerone.Text)
+                {
+                    MessageBox.Show("Congrats:" + player1Prof.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Congrats:" + p2OrCom.Text);
+                }
+                btnNewgame.PerformClick();
+
+            }
+            else if ((btn7.Text == btn8.Text) && (btn8.Text == btn9.Text) && (!btn7.Enabled))
+            {
+                if (btn7.Text == LabelPlayerone.Text)
+                {
+                    MessageBox.Show("Congrats:" + player1Prof.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Congrats:" + p2OrCom.Text);
+                }
+                btnNewgame.PerformClick();
+
+            }
+            //vertical
+            else if ((btn1.Text == btn4.Text) && (btn4.Text == btn7.Text) && (!btn1.Enabled))
+            {
+                if (btn1.Text == LabelPlayerone.Text)
+                {
+                    MessageBox.Show("Congrats:" + player1Prof.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Congrats:" + p2OrCom.Text);
+                }
+                btnNewgame.PerformClick();
+            }
+            else if ((btn2.Text == btn5.Text) && (btn5.Text == btn8.Text) && (!btn2.Enabled))
+            {
+                if (btn2.Text == LabelPlayerone.Text)
+                {
+                    MessageBox.Show("Congrats:" + player1Prof.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Congrats:" + p2OrCom.Text);
+                }
+                btnNewgame.PerformClick();
+
+            }
+            else if ((btn3.Text == btn6.Text) && (btn6.Text == btn9.Text) && (!btn3.Enabled))
+            {
+                if (btn3.Text == LabelPlayerone.Text)
+                {
+                    MessageBox.Show("Congrats:" + player1Prof.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Congrats:" + p2OrCom.Text);
+                }
+                btnNewgame.PerformClick();
+
+            }
+            //diagonal
+            else if ((btn1.Text == btn5.Text) && (btn5.Text == btn9.Text) && (!btn1.Enabled))
+            {
+
+                if (btn1.Text == LabelPlayerone.Text)
+                {
+                    MessageBox.Show("Congrats:" + player1Prof.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Congrats:" + p2OrCom.Text);
+                }
+                btnNewgame.PerformClick();
+            }
+            else if ((btn3.Text == btn5.Text) && (btn5.Text == btn7.Text) && (!btn3.Enabled))
+            {
+                if (btn3.Text == LabelPlayerone.Text)
+                {
+                    MessageBox.Show("Congrats:" + player1Prof.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Congrats:" + p2OrCom.Text);
+                }
+                btnNewgame.PerformClick();
+
+            }
+            else if (countturn == 5){
+                MessageBox.Show("DRAW");
+            }
+
+
+           
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            players();
+
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            player.Stop();
+        }
+        private void computerPlay(bool comp)
+        {
+           
+            
+        }
     }
 }

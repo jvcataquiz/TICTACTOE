@@ -10,15 +10,20 @@ using System.Windows.Forms;
 
 namespace TicTocToe
 {
+ 
     public partial class Form2 : Form
     {
         string versus;
         public static string setValueText1 ="";
         public static string setValueText2 = "";
-  
+        public static bool playerController;
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+         
         public Form2()
         {
             InitializeComponent();
+            player.SoundLocation = "ticbg.wav";
+            player.Play();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -57,16 +62,16 @@ namespace TicTocToe
             {
                 setValueText1 =Convert.ToString(textBoxDisplayP1.Text);
                 setValueText2 = Convert.ToString(textBoxDisplayP2.Text);
-                
+                playerController = rbtnPlayer2.Checked;
                 this.Hide();
-                Form1 form1 = new Form1();
-               
+                Form1 form1 = new Form1(); 
                 form1.Show();
             }
             else
             {
                 setValueText1 = Convert.ToString(textBoxDisplayP1.Text);
                 setValueText2 = Convert.ToString(textBoxDisplayP2.Text);
+                playerController = rbtnPlayer2.Checked;
                 versus = "com";
                 this.Hide();
                 Form1 form1 = new Form1();
@@ -81,6 +86,11 @@ namespace TicTocToe
         private void Form2_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
