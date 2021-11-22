@@ -12,20 +12,22 @@ namespace TicTocToe
 {
     public partial class Form1 : Form
     {
-      bool playerGame ;
-       
+        int p1score = 0;
+        int p2score = 0;
+        bool playerGame ;
         bool player2;
-      
         bool turn = true;
         int countturn = 0;
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         public Form1()
         {
             InitializeComponent();
-            
+            //from welcome.cs transfer here
             player1Prof.Text = Form2.setValueText1;
             p2OrCom.Text = Form2.setValueText2;
+            //for music bg
             player.SoundLocation = "ticbg.wav";
+            //controller whether comp or 2player
             playerGame = Form2.playerController;
                 if (playerGame)
             {
@@ -34,11 +36,16 @@ namespace TicTocToe
             else
             {
                 player2 = false;
+                LabelPlayerone.Text = "X";
+                labelPlayerTwo.Text = "O";
+                
+                labelturn.Visible = false;
+                label2.Visible = false;
             }
+             //function calling music bg
             player.Play();
-
-
         }
+        //playerRandom
         private void players()
         {
             Random rnd1 = new Random();
@@ -47,17 +54,29 @@ namespace TicTocToe
             {
                 LabelPlayerone.Text = "X";
                 labelPlayerTwo.Text = "O";
-
+                //setting player name to labelturns
+                if (LabelPlayerone.Text == "X")
+                {
+                    labelturn.Text = player1Prof.Text;
+                    
+                }
             }
             else
             {
                 LabelPlayerone.Text = "O";
                 labelPlayerTwo.Text = "X";
+                //setting player name to turns
+                if (labelPlayerTwo.Text == "X")
+                {
+                    labelturn.Text = p2OrCom.Text;
+                }
+
             }
         }
+        //NewgameBtn
         private void btnNewgame_Click(object sender, EventArgs e)
         {
-
+            //enabling the all butto  for new games
             btn1.Enabled = true;
             btn2.Enabled = true;
             btn3.Enabled = true;
@@ -67,6 +86,7 @@ namespace TicTocToe
             btn7.Enabled = true;
             btn8.Enabled = true; 
             btn9.Enabled = true;
+
             btn1.Text = "";
             btn2.Text = "";
             btn3.Text = "";
@@ -76,8 +96,7 @@ namespace TicTocToe
             btn7.Text = "";
             btn8.Text = "";
             btn9.Text = "";
-
-
+            //setting the default color
             btn1.BackColor = System.Drawing.Color.Black;
             btn2.BackColor = System.Drawing.Color.Black;
             btn3.BackColor = System.Drawing.Color.Black;
@@ -87,30 +106,22 @@ namespace TicTocToe
             btn7.BackColor = System.Drawing.Color.Black;
             btn8.BackColor = System.Drawing.Color.Black;
             btn9.BackColor = System.Drawing.Color.Black;
+            //diplaying the score of the player
+            labelp1score.Text = Convert.ToString(p1score);
+            labelp2score.Text = Convert.ToString(p2score);
             turn = true;
             countturn = 0;
-            players();
-        }
-
-        
-
-
-        private void player1Prof_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-
-        
-
-        private void p2OrCom_Click(object sender, EventArgs e)
-        {
+            if (player2 == true)
+            {
+                players();
+            }
            
         }
-       
+
+        //Click Events
         private void btn1to9(object sender, EventArgs e)
         {
-            
+            //player2
             if (player2)
             {
                 Button btnclick = (Button)sender;
@@ -118,34 +129,62 @@ namespace TicTocToe
                 {
                     btnclick.Text = "X";
                     countturn++;
+                    if (LabelPlayerone.Text == "X")
+                    {
+                        labelturn.Text = p2OrCom.Text;
+                    }
+                    else
+                    {
+                        labelturn.Text = player1Prof.Text;
+                     
+                    }
                 }
                 else
                 {
                     btnclick.Text = "O";
+
+                    if (LabelPlayerone.Text == "O")
+                    {
+                        labelturn.Text = p2OrCom.Text;
+                       
+                    }
+                    else
+                    {
+                        labelturn.Text = player1Prof.Text;
+                    }
                 }
                 turn = !turn;
                 btnclick.Enabled = false;
                 winnerChecker();
                
             }
+            //Computer
             else
             {
                 Button combtnclick = (Button)sender;
                 if (turn)
                 {
-                  
-                    combtnclick.Text = LabelPlayerone.Text;
+                    combtnclick.Text = "X";
                     countturn++;
+                  
                 }
                 else
                 {
-                    combtnclick.Text = labelPlayerTwo.Text;
-                    
+                    combtnclick.Text = "O";
                 }
                 
+                turn = !turn;
+                combtnclick.Enabled = false;
+                winnerChecker();
+                if (!turn)
+                {
+                    computer_make_move();
+                }
+                    
             }
         }
 
+        //Hover Events
         private void hover1to9(object sender, EventArgs e)
         {
             Button hover = (Button)sender;
@@ -153,6 +192,7 @@ namespace TicTocToe
             hover.ForeColor = System.Drawing.Color.Gray;
         }
 
+        //Leave Events
         private void leave1to9(object sender, EventArgs e)
         {
             Button leave = (Button)sender;
@@ -169,6 +209,7 @@ namespace TicTocToe
             }
         }
        
+        //GameChecker
         private void winnerChecker()
         {
 
@@ -178,10 +219,12 @@ namespace TicTocToe
                if(btn1.Text == LabelPlayerone.Text)
                 { 
                     MessageBox.Show("Congrats:" + player1Prof.Text);
+                    p1score++;
                 }
                 else
                 {
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
+                    p2score++;
                 }
                 btnNewgame.PerformClick();
 
@@ -191,10 +234,12 @@ namespace TicTocToe
                 if (btn4.Text == LabelPlayerone.Text)
                 {
                     MessageBox.Show("Congrats:" + player1Prof.Text);
+                    p1score++;
                 }
                 else
                 {
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
+                    p2score++;
                 }
                 btnNewgame.PerformClick();
 
@@ -204,10 +249,12 @@ namespace TicTocToe
                 if (btn7.Text == LabelPlayerone.Text)
                 {
                     MessageBox.Show("Congrats:" + player1Prof.Text);
+                    p1score++;
                 }
                 else
                 {
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
+                    p2score++;
                 }
                 btnNewgame.PerformClick();
 
@@ -218,10 +265,12 @@ namespace TicTocToe
                 if (btn1.Text == LabelPlayerone.Text)
                 {
                     MessageBox.Show("Congrats:" + player1Prof.Text);
+                    p1score++;
                 }
                 else
                 {
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
+                    p2score++;
                 }
                 btnNewgame.PerformClick();
             }
@@ -230,10 +279,12 @@ namespace TicTocToe
                 if (btn2.Text == LabelPlayerone.Text)
                 {
                     MessageBox.Show("Congrats:" + player1Prof.Text);
+                    p1score++;
                 }
                 else
                 {
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
+                    p2score++;
                 }
                 btnNewgame.PerformClick();
 
@@ -243,10 +294,12 @@ namespace TicTocToe
                 if (btn3.Text == LabelPlayerone.Text)
                 {
                     MessageBox.Show("Congrats:" + player1Prof.Text);
+                    p1score++;
                 }
                 else
                 {
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
+                    p2score++;
                 }
                 btnNewgame.PerformClick();
 
@@ -258,10 +311,12 @@ namespace TicTocToe
                 if (btn1.Text == LabelPlayerone.Text)
                 {
                     MessageBox.Show("Congrats:" + player1Prof.Text);
+                    p1score++;
                 }
                 else
                 {
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
+                    p2score++;
                 }
                 btnNewgame.PerformClick();
             }
@@ -270,16 +325,19 @@ namespace TicTocToe
                 if (btn3.Text == LabelPlayerone.Text)
                 {
                     MessageBox.Show("Congrats:" + player1Prof.Text);
+                    p1score++;
                 }
                 else
                 {
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
+                    p2score++;
                 }
                 btnNewgame.PerformClick();
 
             }
             else if (countturn == 5){
                 MessageBox.Show("DRAW");
+                btnNewgame.PerformClick();
             }
 
 
@@ -288,18 +346,198 @@ namespace TicTocToe
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            players();
-
+            if (player2 == true)
+            {
+                players();
+            }
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             player.Stop();
         }
-        private void computerPlay(bool comp)
+        private void computerplay()
+        {
+
+        }
+
+        private void computer_make_move()
+        {
+            //priority 1:  get tick tac toe
+            //priority 2:  block x tic tac toe
+            //priority 3:  go for corner space
+            //priority 4:  pick open space
+
+            Button move = null;
+
+            //look for tic tac toe opportunities
+            move = winandblock("O"); //look for win
+            if (move == null)
+            {
+                move = winandblock("X"); //look for block
+                if (move == null)
+                {
+                    move = corner();
+                }
+
+            }
+            move.PerformClick();
+            if (move.Enabled)
+            {
+                move.BackColor = System.Drawing.Color.Black;
+                move.ForeColor = System.Drawing.Color.Black;
+
+            }
+            else
+            {
+                move.BackColor = System.Drawing.Color.Gray;
+                move.ForeColor = System.Drawing.Color.Black;
+            }
+
+        }
+
+        
+
+        private Button corner()
+        {
+          
+            if (btn1.Text == "O")
+            {
+                if (btn3.Text == "")
+                    return btn3;
+                if (btn9.Text == "")
+                    return btn9;
+                if (btn7.Text == "")
+                    return btn7;
+            }
+
+            if (btn3.Text == "O")
+            {
+                if (btn1.Text == "")
+                    return btn1;
+                if (btn9.Text == "")
+                    return btn9;
+                if (btn7.Text == "")
+                    return btn7;
+            }
+
+            if (btn9.Text == "O")
+            {
+                if (btn1.Text == "")
+                    return btn3;
+                if (btn3.Text == "")
+                    return btn3;
+                if (btn7.Text == "")
+                    return btn7;
+            }
+
+            if (btn7.Text == "O")
+            {
+                if (btn1.Text == "")
+                    return btn3;
+                if (btn3.Text == "")
+                    return btn3;
+                if (btn9.Text == "")
+                    return btn9;
+            }
+
+            if (btn1.Text == "")
+                return btn1;
+            if (btn2.Text == "")
+                return btn2;
+            if (btn3.Text == "")
+                return btn3;
+            if (btn4.Text == "")
+                return btn4;
+            if (btn5.Text == "")
+                return btn5;
+
+            if (btn6.Text == "")
+                return btn6;
+            if (btn7.Text == "")
+                return btn7;
+            if (btn8.Text == "")
+                return btn8;
+            if (btn9.Text == "")
+                return btn9;
+
+
+
+           
+            return null;
+        }
+
+        private Button winandblock(string xo)
         {
            
-            
+            //HORIZONTAL TESTS
+            if ((btn1.Text == xo) && (btn2.Text == xo) && (btn3.Text == ""))
+                return btn3;
+            if ((btn2.Text == xo) && (btn3.Text == xo) && (btn1.Text == ""))
+                return btn1;
+            if ((btn1.Text == xo) && (btn3.Text == xo) && (btn2.Text == ""))
+                return btn2;
+
+            if ((btn4.Text == xo) && (btn5.Text == xo) && (btn6.Text == ""))
+                return btn6;
+            if ((btn5.Text == xo) && (btn6.Text == xo) && (btn4.Text == ""))
+                return btn4;
+            if ((btn4.Text == xo) && (btn6.Text == xo) && (btn5.Text == ""))
+                return btn5;
+
+            if ((btn7.Text == xo) && (btn8.Text == xo) && (btn9.Text == ""))
+                return btn9;
+            if ((btn8.Text == xo) && (btn9.Text == xo) && (btn7.Text == ""))
+                return btn7;
+            if ((btn7.Text == xo) && (btn9.Text == xo) && (btn8.Text == ""))
+                return btn8;
+
+            //VERTICAL TESTS
+            if ((btn1.Text == xo) && (btn4.Text == xo) && (btn7.Text == ""))
+                return btn7;
+            if ((btn4.Text == xo) && (btn7.Text == xo) && (btn1.Text == ""))
+                return btn1;
+            if ((btn1.Text == xo) && (btn7.Text == xo) && (btn4.Text == ""))
+                return btn4;
+
+            if ((btn2.Text == xo) && (btn5.Text == xo) && (btn8.Text == ""))
+                return btn8;
+            if ((btn5.Text == xo) && (btn8.Text == xo) && (btn2.Text == ""))
+                return btn2;
+            if ((btn2.Text == xo) && (btn8.Text == xo) && (btn5.Text == ""))
+                return btn5;
+
+            if ((btn3.Text == xo) && (btn6.Text == xo) && (btn9.Text == ""))
+                return btn9;
+            if ((btn6.Text == xo) && (btn9.Text == xo) && (btn3.Text == ""))
+                return btn3;
+            if ((btn3.Text == xo) && (btn9.Text == xo) && (btn6.Text == ""))
+                return btn6;
+
+            //DIAGONAL TESTS
+            if ((btn1.Text == xo) && (btn5.Text == xo) && (btn9.Text == ""))
+                return btn9;
+            if ((btn5.Text == xo) && (btn9.Text == xo) && (btn1.Text == ""))
+                return btn1;
+            if ((btn1.Text == xo) && (btn9.Text == xo) && (btn5.Text == ""))
+                return btn5;
+
+            if ((btn3.Text == xo) && (btn5.Text == xo) && (btn7.Text == ""))
+                return btn7;
+            if ((btn5.Text == xo) && (btn7.Text == xo) && (btn3.Text == ""))
+                return btn3;
+            if ((btn3.Text == xo) && (btn7.Text == xo) && (btn5.Text == ""))
+                return btn5;
+
+            return null;
+        }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+          
+            Form2 newform2 = new Form2();
+            newform2.Show();
+            this.Hide();
         }
     }
 }

@@ -44,9 +44,13 @@ namespace TicTocToe
             this.p2OrCom = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelp1score = new System.Windows.Forms.Label();
+            this.labelp2score = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelturn = new System.Windows.Forms.Label();
             this.LabelPlayerone = new System.Windows.Forms.Label();
             this.labelPlayerTwo = new System.Windows.Forms.Label();
+            this.buttonHome = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +60,7 @@ namespace TicTocToe
             this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
             this.btn1.ForeColor = System.Drawing.Color.Black;
-            this.btn1.Location = new System.Drawing.Point(133, 106);
+            this.btn1.Location = new System.Drawing.Point(133, 116);
             this.btn1.Name = "btn1";
             this.btn1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn1.Size = new System.Drawing.Size(105, 105);
@@ -72,7 +76,7 @@ namespace TicTocToe
             this.btn2.BackColor = System.Drawing.Color.Black;
             this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
-            this.btn2.Location = new System.Drawing.Point(244, 106);
+            this.btn2.Location = new System.Drawing.Point(244, 116);
             this.btn2.Name = "btn2";
             this.btn2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn2.Size = new System.Drawing.Size(105, 105);
@@ -88,7 +92,7 @@ namespace TicTocToe
             this.btn3.BackColor = System.Drawing.Color.Black;
             this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
-            this.btn3.Location = new System.Drawing.Point(355, 106);
+            this.btn3.Location = new System.Drawing.Point(355, 116);
             this.btn3.Name = "btn3";
             this.btn3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn3.Size = new System.Drawing.Size(105, 105);
@@ -104,7 +108,7 @@ namespace TicTocToe
             this.btn4.BackColor = System.Drawing.Color.Black;
             this.btn4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
-            this.btn4.Location = new System.Drawing.Point(133, 217);
+            this.btn4.Location = new System.Drawing.Point(133, 227);
             this.btn4.Name = "btn4";
             this.btn4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn4.Size = new System.Drawing.Size(105, 105);
@@ -120,7 +124,7 @@ namespace TicTocToe
             this.btn5.BackColor = System.Drawing.Color.Black;
             this.btn5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
-            this.btn5.Location = new System.Drawing.Point(244, 217);
+            this.btn5.Location = new System.Drawing.Point(244, 227);
             this.btn5.Name = "btn5";
             this.btn5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn5.Size = new System.Drawing.Size(105, 105);
@@ -136,7 +140,7 @@ namespace TicTocToe
             this.btn6.BackColor = System.Drawing.Color.Black;
             this.btn6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
-            this.btn6.Location = new System.Drawing.Point(355, 217);
+            this.btn6.Location = new System.Drawing.Point(355, 227);
             this.btn6.Name = "btn6";
             this.btn6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn6.Size = new System.Drawing.Size(105, 105);
@@ -152,7 +156,7 @@ namespace TicTocToe
             this.btn7.BackColor = System.Drawing.Color.Black;
             this.btn7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
-            this.btn7.Location = new System.Drawing.Point(133, 328);
+            this.btn7.Location = new System.Drawing.Point(133, 338);
             this.btn7.Name = "btn7";
             this.btn7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn7.Size = new System.Drawing.Size(105, 105);
@@ -168,7 +172,7 @@ namespace TicTocToe
             this.btn8.BackColor = System.Drawing.Color.Black;
             this.btn8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
-            this.btn8.Location = new System.Drawing.Point(244, 328);
+            this.btn8.Location = new System.Drawing.Point(244, 338);
             this.btn8.Name = "btn8";
             this.btn8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn8.Size = new System.Drawing.Size(105, 105);
@@ -184,7 +188,7 @@ namespace TicTocToe
             this.btn9.BackColor = System.Drawing.Color.Black;
             this.btn9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 60.75F);
-            this.btn9.Location = new System.Drawing.Point(355, 329);
+            this.btn9.Location = new System.Drawing.Point(355, 339);
             this.btn9.Name = "btn9";
             this.btn9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btn9.Size = new System.Drawing.Size(105, 105);
@@ -219,7 +223,6 @@ namespace TicTocToe
             this.player1Prof.Size = new System.Drawing.Size(90, 19);
             this.player1Prof.TabIndex = 10;
             this.player1Prof.Text = "nameofp1";
-            this.player1Prof.Click += new System.EventHandler(this.player1Prof_Click);
             // 
             // p2OrCom
             // 
@@ -234,7 +237,6 @@ namespace TicTocToe
             this.p2OrCom.TabIndex = 11;
             this.p2OrCom.Text = "nameof";
             this.p2OrCom.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.p2OrCom.Click += new System.EventHandler(this.p2OrCom_Click);
             // 
             // label1
             // 
@@ -251,9 +253,13 @@ namespace TicTocToe
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.buttonHome);
+            this.panel1.Controls.Add(this.labelp1score);
+            this.panel1.Controls.Add(this.labelp2score);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.player1Prof);
             this.panel1.Controls.Add(this.p2OrCom);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.labelturn);
             this.panel1.Controls.Add(this.LabelPlayerone);
             this.panel1.Controls.Add(this.btnNewgame);
             this.panel1.Controls.Add(this.labelPlayerTwo);
@@ -273,16 +279,51 @@ namespace TicTocToe
             this.panel1.Size = new System.Drawing.Size(604, 502);
             this.panel1.TabIndex = 13;
             // 
+            // labelp1score
+            // 
+            this.labelp1score.AutoSize = true;
+            this.labelp1score.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.labelp1score.Location = new System.Drawing.Point(55, 136);
+            this.labelp1score.Name = "labelp1score";
+            this.labelp1score.Size = new System.Drawing.Size(24, 25);
+            this.labelp1score.TabIndex = 18;
+            this.labelp1score.Text = "0";
+            // 
+            // labelp2score
+            // 
+            this.labelp2score.AutoSize = true;
+            this.labelp2score.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.labelp2score.Location = new System.Drawing.Point(503, 136);
+            this.labelp2score.Name = "labelp2score";
+            this.labelp2score.Size = new System.Drawing.Size(24, 25);
+            this.labelp2score.TabIndex = 17;
+            this.labelp2score.Text = "0";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(235, 50);
+            this.label2.BackColor = System.Drawing.Color.Cyan;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.label2.Location = new System.Drawing.Point(260, 42);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.label2.Size = new System.Drawing.Size(130, 44);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Mechanics:\r\n    \"X\" - First To Play";
+            this.label2.Size = new System.Drawing.Size(67, 25);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Turns";
+            // 
+            // labelturn
+            // 
+            this.labelturn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelturn.AutoSize = true;
+            this.labelturn.Font = new System.Drawing.Font("Lucida Sans", 12.25F, System.Drawing.FontStyle.Bold);
+            this.labelturn.Location = new System.Drawing.Point(240, 67);
+            this.labelturn.Name = "labelturn";
+            this.labelturn.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.labelturn.Size = new System.Drawing.Size(111, 39);
+            this.labelturn.TabIndex = 15;
+            this.labelturn.Text = "PlayerTurns";
+            this.labelturn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LabelPlayerone
             // 
@@ -303,6 +344,19 @@ namespace TicTocToe
             this.labelPlayerTwo.Size = new System.Drawing.Size(45, 29);
             this.labelPlayerTwo.TabIndex = 13;
             this.labelPlayerTwo.Text = "P2";
+            // 
+            // buttonHome
+            // 
+            this.buttonHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(125)))), ((int)(((byte)(62)))), ((int)(((byte)(255)))));
+            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.buttonHome.Location = new System.Drawing.Point(482, 450);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(105, 40);
+            this.buttonHome.TabIndex = 19;
+            this.buttonHome.TabStop = false;
+            this.buttonHome.Text = "HOME";
+            this.buttonHome.UseVisualStyleBackColor = false;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // Form1
             // 
@@ -341,7 +395,11 @@ namespace TicTocToe
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label LabelPlayerone;
         private System.Windows.Forms.Label labelPlayerTwo;
+        private System.Windows.Forms.Label labelturn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelp2score;
+        private System.Windows.Forms.Label labelp1score;
+        private System.Windows.Forms.Button buttonHome;
     }
 }
 
