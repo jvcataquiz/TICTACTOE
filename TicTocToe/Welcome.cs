@@ -24,6 +24,7 @@ namespace TicTocToe
             InitializeComponent();
             player.SoundLocation = "ticbg.wav";
             player.Play();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,6 +37,7 @@ namespace TicTocToe
             
             textBoxDisplayP2.Enabled = true;
             versus = "player2";
+            btnSubmit.Enabled = true;
         }
 
         private void rdbtnCom_CheckedChanged(object sender, EventArgs e)
@@ -43,6 +45,7 @@ namespace TicTocToe
             textBoxDisplayP2.Enabled = false;
             textBoxDisplayP2.Text = "Computer";
               versus = "com";
+            btnSubmit.Enabled = true;
         }
         private void textBoxDisplayP1_TextChanged(object sender, EventArgs e)
         {
