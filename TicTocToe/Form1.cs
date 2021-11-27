@@ -30,6 +30,7 @@ namespace TicTocToe
                 if (playerGame)
             {
                 player2 = true;
+                groupBoxGameMode.Visible = false;
             }
             else
             {
@@ -38,6 +39,7 @@ namespace TicTocToe
                 labelPlayerTwo.Text = "O";
                 labelturn.Visible = false;
                 label2.Visible = false;
+                groupBoxGameMode.Visible = true;
             }
             //for music bg location
             player.SoundLocation = "ticbg.wav";
@@ -151,7 +153,18 @@ namespace TicTocToe
                 winnerChecker();
                 if (!turn)
                 {
-                    computerplay();
+                    if (radioButtonEasy.Checked)
+                    {
+                        computerplayEasy();
+                    }
+                    else if (radioButtonMedium.Checked)
+                    {
+                        computerplayMedium();
+                    }
+                    else if (radioButtonHard.Checked)
+                    {
+                        computerplayHard();
+                    }
                 }
                     
             }
@@ -301,8 +314,65 @@ namespace TicTocToe
 
            
         }
+        private void computerplayEasy()
+        {
 
-        private void computerplay()
+            Button com_Move = null;
+
+            com_Move = freespaceeasy();
+            if (com_Move == null)
+            {
+                btnNewgame.PerformClick();
+            }
+
+
+            com_Move.PerformClick();
+            if (com_Move.Enabled)
+            {
+                com_Move.BackColor = System.Drawing.Color.Black;
+                com_Move.ForeColor = System.Drawing.Color.Black;
+
+            }
+            else
+            {
+                com_Move.BackColor = System.Drawing.Color.Gray;
+                com_Move.ForeColor = System.Drawing.Color.Black;
+            }
+
+        }
+        private void computerplayMedium()
+        {
+
+            Button com_Move = null;
+            com_Move = winandblock("O");
+            if (com_Move == null)
+            {
+                com_Move = corner();
+                if (com_Move == null)
+                {
+                    com_Move = freespaceeasy();
+                    if (com_Move == null)
+                    {
+                        btnNewgame.PerformClick();
+                    }
+                }
+            }
+            com_Move.PerformClick();
+            if (com_Move.Enabled)
+            {
+                com_Move.BackColor = System.Drawing.Color.Black;
+                com_Move.ForeColor = System.Drawing.Color.Black;
+
+            }
+            else
+            {
+                com_Move.BackColor = System.Drawing.Color.Gray;
+                com_Move.ForeColor = System.Drawing.Color.Black;
+            }
+
+        }
+       
+        private void computerplayHard()
         {
            
             Button com_Move = null;
@@ -339,6 +409,8 @@ namespace TicTocToe
             }
 
         }
+     
+
 
         private Button winandblock(string xo)
         {
@@ -462,6 +534,28 @@ namespace TicTocToe
         }
         private Button freespace()
         {
+            if (btn2.Text == "")
+                return btn2;
+            if (btn4.Text == "")
+                return btn4;
+            if (btn6.Text == "")
+                return btn6;
+            if (btn8.Text == "")
+                return btn8;
+            return null;
+        }
+        private Button freespaceeasy()
+        {
+            if (btn5.Text == "")
+                return btn5;
+            if (btn1.Text == "")
+                return btn1;
+            if (btn3.Text == "")
+                return btn3;
+            if (btn7.Text == "")
+                return btn7;
+            if (btn9.Text == "")
+                return btn9;
             if (btn2.Text == "")
                 return btn2;
             if (btn4.Text == "")

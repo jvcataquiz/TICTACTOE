@@ -44,14 +44,19 @@ namespace TicTocToe
             this.p2OrCom = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBoxGameMode = new System.Windows.Forms.GroupBox();
+            this.radioButtonHard = new System.Windows.Forms.RadioButton();
+            this.radioButtonMedium = new System.Windows.Forms.RadioButton();
+            this.radioButtonEasy = new System.Windows.Forms.RadioButton();
+            this.buttonHome = new System.Windows.Forms.Button();
             this.labelp1score = new System.Windows.Forms.Label();
             this.labelp2score = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelturn = new System.Windows.Forms.Label();
             this.LabelPlayerone = new System.Windows.Forms.Label();
             this.labelPlayerTwo = new System.Windows.Forms.Label();
-            this.buttonHome = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.groupBoxGameMode.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn1
@@ -253,6 +258,7 @@ namespace TicTocToe
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.groupBoxGameMode);
             this.panel1.Controls.Add(this.buttonHome);
             this.panel1.Controls.Add(this.labelp1score);
             this.panel1.Controls.Add(this.labelp2score);
@@ -278,6 +284,63 @@ namespace TicTocToe
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(604, 502);
             this.panel1.TabIndex = 13;
+            // 
+            // groupBoxGameMode
+            // 
+            this.groupBoxGameMode.Controls.Add(this.radioButtonHard);
+            this.groupBoxGameMode.Controls.Add(this.radioButtonMedium);
+            this.groupBoxGameMode.Controls.Add(this.radioButtonEasy);
+            this.groupBoxGameMode.Location = new System.Drawing.Point(482, 203);
+            this.groupBoxGameMode.Name = "groupBoxGameMode";
+            this.groupBoxGameMode.Size = new System.Drawing.Size(105, 92);
+            this.groupBoxGameMode.TabIndex = 20;
+            this.groupBoxGameMode.TabStop = false;
+            this.groupBoxGameMode.Text = "Computer Mode:";
+            // 
+            // radioButtonHard
+            // 
+            this.radioButtonHard.AutoSize = true;
+            this.radioButtonHard.Location = new System.Drawing.Point(6, 63);
+            this.radioButtonHard.Name = "radioButtonHard";
+            this.radioButtonHard.Size = new System.Drawing.Size(48, 17);
+            this.radioButtonHard.TabIndex = 2;
+            this.radioButtonHard.Text = "Hard";
+            this.radioButtonHard.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMedium
+            // 
+            this.radioButtonMedium.AutoSize = true;
+            this.radioButtonMedium.Location = new System.Drawing.Point(6, 43);
+            this.radioButtonMedium.Name = "radioButtonMedium";
+            this.radioButtonMedium.Size = new System.Drawing.Size(62, 17);
+            this.radioButtonMedium.TabIndex = 1;
+            this.radioButtonMedium.Text = "Medium";
+            this.radioButtonMedium.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonEasy
+            // 
+            this.radioButtonEasy.AutoSize = true;
+            this.radioButtonEasy.Checked = true;
+            this.radioButtonEasy.Location = new System.Drawing.Point(6, 23);
+            this.radioButtonEasy.Name = "radioButtonEasy";
+            this.radioButtonEasy.Size = new System.Drawing.Size(48, 17);
+            this.radioButtonEasy.TabIndex = 0;
+            this.radioButtonEasy.TabStop = true;
+            this.radioButtonEasy.Text = "Easy";
+            this.radioButtonEasy.UseVisualStyleBackColor = true;
+            // 
+            // buttonHome
+            // 
+            this.buttonHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(125)))), ((int)(((byte)(62)))), ((int)(((byte)(255)))));
+            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.buttonHome.Location = new System.Drawing.Point(482, 450);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(105, 40);
+            this.buttonHome.TabIndex = 19;
+            this.buttonHome.TabStop = false;
+            this.buttonHome.Text = "HOME";
+            this.buttonHome.UseVisualStyleBackColor = false;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // labelp1score
             // 
@@ -345,19 +408,6 @@ namespace TicTocToe
             this.labelPlayerTwo.TabIndex = 13;
             this.labelPlayerTwo.Text = "P2";
             // 
-            // buttonHome
-            // 
-            this.buttonHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(125)))), ((int)(((byte)(62)))), ((int)(((byte)(255)))));
-            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.buttonHome.Location = new System.Drawing.Point(482, 450);
-            this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(105, 40);
-            this.buttonHome.TabIndex = 19;
-            this.buttonHome.TabStop = false;
-            this.buttonHome.Text = "HOME";
-            this.buttonHome.UseVisualStyleBackColor = false;
-            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,6 +424,8 @@ namespace TicTocToe
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBoxGameMode.ResumeLayout(false);
+            this.groupBoxGameMode.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -400,6 +452,10 @@ namespace TicTocToe
         private System.Windows.Forms.Label labelp2score;
         private System.Windows.Forms.Label labelp1score;
         private System.Windows.Forms.Button buttonHome;
+        private System.Windows.Forms.GroupBox groupBoxGameMode;
+        private System.Windows.Forms.RadioButton radioButtonMedium;
+        private System.Windows.Forms.RadioButton radioButtonEasy;
+        private System.Windows.Forms.RadioButton radioButtonHard;
     }
 }
 
