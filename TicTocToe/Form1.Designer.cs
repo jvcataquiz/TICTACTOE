@@ -40,9 +40,6 @@ namespace TicTocToe
             this.btn8 = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
             this.btnNewgame = new System.Windows.Forms.Button();
-            this.player1Prof = new System.Windows.Forms.Label();
-            this.p2OrCom = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxGameMode = new System.Windows.Forms.GroupBox();
             this.radioButtonHard = new System.Windows.Forms.RadioButton();
@@ -51,12 +48,17 @@ namespace TicTocToe
             this.buttonHome = new System.Windows.Forms.Button();
             this.labelp1score = new System.Windows.Forms.Label();
             this.labelp2score = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelturn = new System.Windows.Forms.Label();
-            this.LabelPlayerone = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.labelPlayerTwo = new System.Windows.Forms.Label();
+            this.LabelPlayerone = new System.Windows.Forms.Label();
+            this.labelturn = new System.Windows.Forms.Label();
+            this.p2OrCom = new System.Windows.Forms.Label();
+            this.player1Prof = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.groupBoxGameMode.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn1
@@ -217,60 +219,16 @@ namespace TicTocToe
             this.btnNewgame.UseVisualStyleBackColor = false;
             this.btnNewgame.Click += new System.EventHandler(this.btnNewgame_Click);
             // 
-            // player1Prof
-            // 
-            this.player1Prof.AutoSize = true;
-            this.player1Prof.BackColor = System.Drawing.Color.White;
-            this.player1Prof.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player1Prof.ForeColor = System.Drawing.Color.OrangeRed;
-            this.player1Prof.Location = new System.Drawing.Point(43, 50);
-            this.player1Prof.Name = "player1Prof";
-            this.player1Prof.Size = new System.Drawing.Size(90, 19);
-            this.player1Prof.TabIndex = 10;
-            this.player1Prof.Text = "nameofp1";
-            // 
-            // p2OrCom
-            // 
-            this.p2OrCom.AutoSize = true;
-            this.p2OrCom.BackColor = System.Drawing.Color.White;
-            this.p2OrCom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.p2OrCom.ForeColor = System.Drawing.Color.OrangeRed;
-            this.p2OrCom.Location = new System.Drawing.Point(478, 50);
-            this.p2OrCom.Name = "p2OrCom";
-            this.p2OrCom.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.p2OrCom.Size = new System.Drawing.Size(70, 19);
-            this.p2OrCom.TabIndex = 11;
-            this.p2OrCom.Text = "nameof";
-            this.p2OrCom.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Poor Richard", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(226, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 28);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "TICTACTOE";
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.groupBoxGameMode);
             this.panel1.Controls.Add(this.buttonHome);
             this.panel1.Controls.Add(this.labelp1score);
             this.panel1.Controls.Add(this.labelp2score);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.player1Prof);
-            this.panel1.Controls.Add(this.p2OrCom);
-            this.panel1.Controls.Add(this.labelturn);
-            this.panel1.Controls.Add(this.LabelPlayerone);
             this.panel1.Controls.Add(this.btnNewgame);
-            this.panel1.Controls.Add(this.labelPlayerTwo);
             this.panel1.Controls.Add(this.btn9);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn8);
             this.panel1.Controls.Add(this.btn3);
             this.panel1.Controls.Add(this.btn7);
@@ -290,7 +248,7 @@ namespace TicTocToe
             this.groupBoxGameMode.Controls.Add(this.radioButtonHard);
             this.groupBoxGameMode.Controls.Add(this.radioButtonMedium);
             this.groupBoxGameMode.Controls.Add(this.radioButtonEasy);
-            this.groupBoxGameMode.Location = new System.Drawing.Point(482, 203);
+            this.groupBoxGameMode.Location = new System.Drawing.Point(12, 398);
             this.groupBoxGameMode.Name = "groupBoxGameMode";
             this.groupBoxGameMode.Size = new System.Drawing.Size(105, 92);
             this.groupBoxGameMode.TabIndex = 20;
@@ -346,7 +304,7 @@ namespace TicTocToe
             // 
             this.labelp1score.AutoSize = true;
             this.labelp1score.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.labelp1score.Location = new System.Drawing.Point(55, 136);
+            this.labelp1score.Location = new System.Drawing.Point(56, 136);
             this.labelp1score.Name = "labelp1score";
             this.labelp1score.Size = new System.Drawing.Size(24, 25);
             this.labelp1score.TabIndex = 18;
@@ -362,16 +320,37 @@ namespace TicTocToe
             this.labelp2score.TabIndex = 17;
             this.labelp2score.Text = "0";
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Cyan;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.label2.Location = new System.Drawing.Point(260, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 25);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Turns";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Poor Richard", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Location = new System.Drawing.Point(226, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 28);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "TICTACTOE";
+            // 
+            // labelPlayerTwo
+            // 
+            this.labelPlayerTwo.AutoSize = true;
+            this.labelPlayerTwo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18.25F);
+            this.labelPlayerTwo.Location = new System.Drawing.Point(494, 72);
+            this.labelPlayerTwo.Name = "labelPlayerTwo";
+            this.labelPlayerTwo.Size = new System.Drawing.Size(45, 29);
+            this.labelPlayerTwo.TabIndex = 13;
+            this.labelPlayerTwo.Text = "P2";
+            // 
+            // LabelPlayerone
+            // 
+            this.LabelPlayerone.AutoSize = true;
+            this.LabelPlayerone.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18.25F);
+            this.LabelPlayerone.Location = new System.Drawing.Point(55, 70);
+            this.LabelPlayerone.Name = "LabelPlayerone";
+            this.LabelPlayerone.Size = new System.Drawing.Size(45, 29);
+            this.LabelPlayerone.TabIndex = 14;
+            this.LabelPlayerone.Text = "P1";
             // 
             // labelturn
             // 
@@ -380,33 +359,66 @@ namespace TicTocToe
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelturn.AutoSize = true;
             this.labelturn.Font = new System.Drawing.Font("Lucida Sans", 12.25F, System.Drawing.FontStyle.Bold);
-            this.labelturn.Location = new System.Drawing.Point(240, 67);
+            this.labelturn.Location = new System.Drawing.Point(238, 66);
             this.labelturn.Name = "labelturn";
             this.labelturn.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.labelturn.Size = new System.Drawing.Size(111, 39);
             this.labelturn.TabIndex = 15;
             this.labelturn.Text = "PlayerTurns";
             this.labelturn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelturn.Click += new System.EventHandler(this.labelturn_Click);
             // 
-            // LabelPlayerone
+            // p2OrCom
             // 
-            this.LabelPlayerone.AutoSize = true;
-            this.LabelPlayerone.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18.25F);
-            this.LabelPlayerone.Location = new System.Drawing.Point(55, 80);
-            this.LabelPlayerone.Name = "LabelPlayerone";
-            this.LabelPlayerone.Size = new System.Drawing.Size(45, 29);
-            this.LabelPlayerone.TabIndex = 14;
-            this.LabelPlayerone.Text = "P1";
+            this.p2OrCom.AutoSize = true;
+            this.p2OrCom.BackColor = System.Drawing.Color.White;
+            this.p2OrCom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.p2OrCom.ForeColor = System.Drawing.Color.OrangeRed;
+            this.p2OrCom.Location = new System.Drawing.Point(478, 45);
+            this.p2OrCom.Name = "p2OrCom";
+            this.p2OrCom.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.p2OrCom.Size = new System.Drawing.Size(70, 19);
+            this.p2OrCom.TabIndex = 11;
+            this.p2OrCom.Text = "nameof";
+            this.p2OrCom.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // labelPlayerTwo
+            // player1Prof
             // 
-            this.labelPlayerTwo.AutoSize = true;
-            this.labelPlayerTwo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18.25F);
-            this.labelPlayerTwo.Location = new System.Drawing.Point(486, 77);
-            this.labelPlayerTwo.Name = "labelPlayerTwo";
-            this.labelPlayerTwo.Size = new System.Drawing.Size(45, 29);
-            this.labelPlayerTwo.TabIndex = 13;
-            this.labelPlayerTwo.Text = "P2";
+            this.player1Prof.AutoSize = true;
+            this.player1Prof.BackColor = System.Drawing.Color.White;
+            this.player1Prof.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1Prof.ForeColor = System.Drawing.Color.OrangeRed;
+            this.player1Prof.Location = new System.Drawing.Point(43, 45);
+            this.player1Prof.Name = "player1Prof";
+            this.player1Prof.Size = new System.Drawing.Size(90, 19);
+            this.player1Prof.TabIndex = 10;
+            this.player1Prof.Text = "nameofp1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Cyan;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.label2.Location = new System.Drawing.Point(260, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 25);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Turns";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.labelturn);
+            this.panel2.Controls.Add(this.player1Prof);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.p2OrCom);
+            this.panel2.Controls.Add(this.LabelPlayerone);
+            this.panel2.Controls.Add(this.labelPlayerTwo);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(604, 110);
+            this.panel2.TabIndex = 21;
             // 
             // Form1
             // 
@@ -426,6 +438,8 @@ namespace TicTocToe
             this.panel1.PerformLayout();
             this.groupBoxGameMode.ResumeLayout(false);
             this.groupBoxGameMode.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -441,14 +455,7 @@ namespace TicTocToe
         private System.Windows.Forms.Button btn8;
         private System.Windows.Forms.Button btn9;
         private System.Windows.Forms.Button btnNewgame;
-        private System.Windows.Forms.Label player1Prof;
-        private System.Windows.Forms.Label p2OrCom;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label LabelPlayerone;
-        private System.Windows.Forms.Label labelPlayerTwo;
-        private System.Windows.Forms.Label labelturn;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelp2score;
         private System.Windows.Forms.Label labelp1score;
         private System.Windows.Forms.Button buttonHome;
@@ -456,6 +463,14 @@ namespace TicTocToe
         private System.Windows.Forms.RadioButton radioButtonMedium;
         private System.Windows.Forms.RadioButton radioButtonEasy;
         private System.Windows.Forms.RadioButton radioButtonHard;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label player1Prof;
+        private System.Windows.Forms.Label p2OrCom;
+        private System.Windows.Forms.Label labelturn;
+        private System.Windows.Forms.Label LabelPlayerone;
+        private System.Windows.Forms.Label labelPlayerTwo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

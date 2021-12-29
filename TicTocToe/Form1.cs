@@ -19,6 +19,8 @@ namespace TicTocToe
         bool turn = true;
         int countturn = 0;
         System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+        System.Media.SoundPlayer click = new System.Media.SoundPlayer();
+        System.Media.SoundPlayer con = new System.Media.SoundPlayer();
         public Form1()
         {
             InitializeComponent();
@@ -43,8 +45,11 @@ namespace TicTocToe
             }
             //for music bg location
             player.SoundLocation = "ticbg.wav";
+            click.SoundLocation = "click.wav";
+           con.SoundLocation = "Congrats.wav";
             //function calling music bg
-            player.Play();
+            
+
         }
         //playerRandom
         private void players()
@@ -101,6 +106,8 @@ namespace TicTocToe
         //Click Events
         private void btn1to9(object sender, EventArgs e)
         {
+            click.Play();
+           
             //player2
             if (player2)
             {
@@ -153,6 +160,7 @@ namespace TicTocToe
                 winnerChecker();
                 if (!turn)
                 {
+                    System.Threading.Thread.Sleep(1000);
                     if (radioButtonEasy.Checked)
                     {
                         computerplayEasy();
@@ -180,16 +188,22 @@ namespace TicTocToe
             {
                 labelturn.Text = "";
                if(btn1.Text == LabelPlayerone.Text)
-                { 
+                {
+                    con.Play();
                     MessageBox.Show("Congrats:" + player1Prof.Text);
                     p1score++;
                 }
                 else
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
                     p2score++;
                 }
+             
                 btnNewgame.PerformClick();
+                
+                
+
 
             }
             else if ((btn4.Text == btn5.Text) && (btn5.Text == btn6.Text) && (!btn4.Enabled))
@@ -197,11 +211,13 @@ namespace TicTocToe
                 labelturn.Text = "";
                 if (btn4.Text == LabelPlayerone.Text)
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + player1Prof.Text);
                     p1score++;
                 }
                 else
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
                     p2score++;
                 }
@@ -213,11 +229,13 @@ namespace TicTocToe
                 labelturn.Text = "";
                 if (btn7.Text == LabelPlayerone.Text)
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + player1Prof.Text);
                     p1score++;
                 }
                 else
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
                     p2score++;
                 }
@@ -230,11 +248,13 @@ namespace TicTocToe
                 labelturn.Text = "";
                 if (btn1.Text == LabelPlayerone.Text)
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + player1Prof.Text);
                     p1score++;
                 }
                 else
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
                     p2score++;
                 }
@@ -245,11 +265,13 @@ namespace TicTocToe
                 labelturn.Text = "";
                 if (btn2.Text == LabelPlayerone.Text)
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + player1Prof.Text);
                     p1score++;
                 }
                 else
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
                     p2score++;
                 }
@@ -261,11 +283,13 @@ namespace TicTocToe
                 labelturn.Text = "";
                 if (btn3.Text == LabelPlayerone.Text)
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + player1Prof.Text);
                     p1score++;
                 }
                 else
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
                     p2score++;
                 }
@@ -279,11 +303,13 @@ namespace TicTocToe
 
                 if (btn1.Text == LabelPlayerone.Text)
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + player1Prof.Text);
                     p1score++;
                 }
                 else
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
                     p2score++;
                 }
@@ -294,11 +320,13 @@ namespace TicTocToe
                 labelturn.Text = "";
                 if (btn3.Text == LabelPlayerone.Text)
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + player1Prof.Text);
                     p1score++;
                 }
                 else
                 {
+                    con.Play();
                     MessageBox.Show("Congrats:" + p2OrCom.Text);
                     p2score++;
                 }
@@ -316,7 +344,7 @@ namespace TicTocToe
         }
         private void computerplayEasy()
         {
-
+    
             Button com_Move = null;
 
             com_Move = freespaceeasy();
@@ -608,7 +636,8 @@ namespace TicTocToe
             {
                 players();
             }
-
+            con.Stop();
+            click.Stop();
         }
         private void buttonHome_Click(object sender, EventArgs e)
         {
@@ -619,6 +648,7 @@ namespace TicTocToe
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            player.Play();
             if (player2 == true)
             {
                 players();
@@ -630,5 +660,14 @@ namespace TicTocToe
             player.Stop();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+            labelturn.Visible = true;
+        }
+
+        private void labelturn_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
