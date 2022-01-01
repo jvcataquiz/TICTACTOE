@@ -47,11 +47,12 @@ namespace TicTocToe
             this.labeli = new System.Windows.Forms.Label();
             this.labelc = new System.Windows.Forms.Label();
             this.labelc2 = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
+            this.labelA = new System.Windows.Forms.Label();
             this.labelt2 = new System.Windows.Forms.Label();
-            this.label7e = new System.Windows.Forms.Label();
+            this.labele = new System.Windows.Forms.Label();
             this.labelo = new System.Windows.Forms.Label();
             this.labelt3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,7 +151,7 @@ namespace TicTocToe
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(505, 384);
+            this.pictureBox1.Size = new System.Drawing.Size(505, 405);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -191,7 +192,7 @@ namespace TicTocToe
             // timerclock
             // 
             this.timerclock.Enabled = true;
-            this.timerclock.Interval = 1000;
+            this.timerclock.Interval = 300;
             this.timerclock.Tick += new System.EventHandler(this.timerclock_Tick);
             // 
             // labelT
@@ -199,7 +200,7 @@ namespace TicTocToe
             this.labelT.AutoSize = true;
             this.labelT.BackColor = System.Drawing.Color.Aquamarine;
             this.labelT.Font = new System.Drawing.Font("Wide Latin", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelT.Location = new System.Drawing.Point(22, 23);
+            this.labelT.Location = new System.Drawing.Point(23, 23);
             this.labelT.Name = "labelT";
             this.labelT.Size = new System.Drawing.Size(64, 46);
             this.labelT.TabIndex = 12;
@@ -211,7 +212,7 @@ namespace TicTocToe
             this.labeli.AutoSize = true;
             this.labeli.BackColor = System.Drawing.Color.Aquamarine;
             this.labeli.Font = new System.Drawing.Font("Wide Latin", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeli.Location = new System.Drawing.Point(224, 23);
+            this.labeli.Location = new System.Drawing.Point(204, 9);
             this.labeli.Name = "labeli";
             this.labeli.Size = new System.Drawing.Size(53, 46);
             this.labeli.TabIndex = 13;
@@ -242,17 +243,17 @@ namespace TicTocToe
             this.labelc2.Text = "C";
             this.labelc2.Visible = false;
             // 
-            // label
+            // labelA
             // 
-            this.label.AutoSize = true;
-            this.label.BackColor = System.Drawing.Color.Aquamarine;
-            this.label.Font = new System.Drawing.Font("Wide Latin", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(187, 166);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(70, 46);
-            this.label.TabIndex = 16;
-            this.label.Text = "A";
-            this.label.Visible = false;
+            this.labelA.AutoSize = true;
+            this.labelA.BackColor = System.Drawing.Color.Aquamarine;
+            this.labelA.Font = new System.Drawing.Font("Wide Latin", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelA.Location = new System.Drawing.Point(187, 161);
+            this.labelA.Name = "labelA";
+            this.labelA.Size = new System.Drawing.Size(70, 46);
+            this.labelA.TabIndex = 16;
+            this.labelA.Text = "A";
+            this.labelA.Visible = false;
             // 
             // labelt2
             // 
@@ -266,24 +267,24 @@ namespace TicTocToe
             this.labelt2.Text = "T";
             this.labelt2.Visible = false;
             // 
-            // label7e
+            // labele
             // 
-            this.label7e.AutoSize = true;
-            this.label7e.BackColor = System.Drawing.Color.Aquamarine;
-            this.label7e.Font = new System.Drawing.Font("Wide Latin", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7e.Location = new System.Drawing.Point(412, 309);
-            this.label7e.Name = "label7e";
-            this.label7e.Size = new System.Drawing.Size(72, 46);
-            this.label7e.TabIndex = 20;
-            this.label7e.Text = "E";
-            this.label7e.Visible = false;
+            this.labele.AutoSize = true;
+            this.labele.BackColor = System.Drawing.Color.Aquamarine;
+            this.labele.Font = new System.Drawing.Font("Wide Latin", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labele.Location = new System.Drawing.Point(411, 303);
+            this.labele.Name = "labele";
+            this.labele.Size = new System.Drawing.Size(72, 46);
+            this.labele.TabIndex = 20;
+            this.labele.Text = "E";
+            this.labele.Visible = false;
             // 
             // labelo
             // 
             this.labelo.AutoSize = true;
             this.labelo.BackColor = System.Drawing.Color.Aquamarine;
             this.labelo.Font = new System.Drawing.Font("Wide Latin", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelo.Location = new System.Drawing.Point(258, 294);
+            this.labelo.Location = new System.Drawing.Point(297, 332);
             this.labelo.Name = "labelo";
             this.labelo.Size = new System.Drawing.Size(69, 46);
             this.labelo.TabIndex = 19;
@@ -295,37 +296,50 @@ namespace TicTocToe
             this.labelt3.AutoSize = true;
             this.labelt3.BackColor = System.Drawing.Color.Aquamarine;
             this.labelt3.Font = new System.Drawing.Font("Wide Latin", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelt3.Location = new System.Drawing.Point(32, 326);
+            this.labelt3.Location = new System.Drawing.Point(60, 306);
             this.labelt3.Name = "labelt3";
             this.labelt3.Size = new System.Drawing.Size(64, 46);
             this.labelt3.TabIndex = 18;
             this.labelt3.Text = "T";
             this.labelt3.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(447, 349);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 50);
+            this.button1.TabIndex = 21;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 384);
+            this.ClientSize = new System.Drawing.Size(505, 405);
             this.ControlBox = false;
-            this.Controls.Add(this.label7e);
-            this.Controls.Add(this.labelo);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.hoverlabel);
+            this.Controls.Add(this.textBoxDisplayP1);
+            this.Controls.Add(this.textBoxDisplayP2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rbtnPlayer2);
+            this.Controls.Add(this.rdbtnCom);
             this.Controls.Add(this.labelt3);
+            this.Controls.Add(this.hoverlabel2);
+            this.Controls.Add(this.labelalert);
+            this.Controls.Add(this.labele);
+            this.Controls.Add(this.labelo);
             this.Controls.Add(this.labelc2);
-            this.Controls.Add(this.label);
+            this.Controls.Add(this.labelA);
             this.Controls.Add(this.labelt2);
             this.Controls.Add(this.labelc);
             this.Controls.Add(this.labeli);
             this.Controls.Add(this.labelT);
-            this.Controls.Add(this.labelalert);
-            this.Controls.Add(this.hoverlabel2);
-            this.Controls.Add(this.hoverlabel);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.textBoxDisplayP2);
-            this.Controls.Add(this.rdbtnCom);
-            this.Controls.Add(this.rbtnPlayer2);
-            this.Controls.Add(this.textBoxDisplayP1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelWelcome);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -358,10 +372,11 @@ namespace TicTocToe
         private System.Windows.Forms.Label labeli;
         private System.Windows.Forms.Label labelc;
         private System.Windows.Forms.Label labelc2;
-        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label labelA;
         private System.Windows.Forms.Label labelt2;
-        private System.Windows.Forms.Label label7e;
+        private System.Windows.Forms.Label labele;
         private System.Windows.Forms.Label labelo;
         private System.Windows.Forms.Label labelt3;
+        private System.Windows.Forms.Button button1;
     }
 }
